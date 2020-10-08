@@ -26,7 +26,10 @@ data = re + 1j*im
 
 sdr = adi.ad9361('local:')
 
-sdr.tx_rf_bandwidth = 20000000 # 20 MHz
+sdr.filter = 'modem_filter.ftr'
+
+sdr.sample_rate = 20000000 # 20 MHz
+sdr.tx_rf_bandwidth = 17650790
 sdr.tx_lo = 2400000000 # 2.4 GHz
 sdr.tx_cyclic_buffer = True
 sdr.tx_hardwaregain = -10 # -10 dB attn
